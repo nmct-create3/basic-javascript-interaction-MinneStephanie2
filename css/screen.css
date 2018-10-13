@@ -656,6 +656,43 @@ more padding on the right to avoid overlap
     padding-right: 52px;
 }
 
+.c-toggle__input--password{
+    display: block;
+    position: relative;
+}
+
+.c-toggle--hide{
+    visibility:hidden;
+}
+
+.c-toggle__password:checked + .c-toggle__input--password .c-toggle--show{
+    height: 50px;
+    visibility:hidden;
+}
+
+.c-toggle__password:checked + .c-toggle__input--password .c-toggle--hide{
+    visibility: visible;
+}
+
+.-toggle-password{
+    display: block;
+    position: relative;
+}
+
+.c-toggle__password{
+    position: relative;
+    left: 295px;
+    top: -50px;
+}
+.c-toggle__symbol{
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    left: 290px;
+    top: -60px;
+    fill: var(--color-neutral-light);
+    pointer-events: none;
+}
 /* option input for checkboxes and radio buttons */
 
 .c-input-option {
@@ -676,13 +713,85 @@ more padding on the right to avoid overlap
     color: var(--color-neutral-x-dark);
 }
 
+.c-label--floating{
+    position: absolute;
+    top: 12px;
+    left: 8px;
+    padding: 4px 8px;
+    will-change: transform;
+    /*transform: translateY( 0 );*/
+    transition: transform 200ms ease-in-out;
+    box-shadow: 0 0 4px 4px rgba(255,255,255,0.8);
+    background: white;
+}
+
+.c-label--flating__up{
+    transform: translateY( -24px );
+}
+
+.c-label--flating__down{
+    transform: translateY( 0px );
+}
+
+.c-input:focus  + .c-label--floating{
+    transform: translateY( -24px ); 
+
+}
+
 /*
     Component: Dropdown Button
     ---
     Class to put on form buttons or
 */
+.c-dropdown-container{
+    position: relative;
+}
 
+.c-button__hoofd{
+    
+}
+/*
+    Component: range slider
+    ---
+    Class to put on form
+*/
+.c-range{
+    display: block;
+    height: 8px;
+    padding: 0;
+    border-radius: 8px;
+    background-color: var(--color-neutral-xxxx-light);
+    border-color: var(--color-neutral-xxx-light)
+}
 
+::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 8px;
+    background: var(--color-alpha );
+}
+
+.c-range-holder{
+    width: calc( 100% - 18px );
+    display: block;
+}
+
+.c-range-holder:after{
+    content: attr(data-value);
+    display: inline-block;
+    width: 32px;
+    margin-top: 12px;
+    padding: 4px;
+    font-size: .8rem;
+    text-align: center;
+    border-radius: 4px;
+    background: var( --color-neutral-xxxx-light );
+    transition: transform 200ms ease-in-out;
+    transform-origin: center top;
+    transform: scale( 1 );
+}
 
 /*
     Component: Button
@@ -965,6 +1074,26 @@ Component: Password Toggle
 Password toggle custom checkbox
 */
 
+.c-password-toggle-container {
+    display: block;
+    position: relative;
+}
+ 
+.c-password-icon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    height: 24px;
+    fill: var(--color-neutral-light)
+}
+ 
+.c-custom-input-option-hidden:checked+.c-password-input-label .c-password-icon--hide, .c-password-icon--show {
+    display: block;
+}
+ 
+.c-custom-input-option-hidden:checked+.c-password-input-label .c-password-icon--show, .c-password-icon--hide {
+    display: none;
+}
 
 /*
 	Component: Custom Like

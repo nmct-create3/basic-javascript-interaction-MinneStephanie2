@@ -16,7 +16,9 @@
         <link rel="mask-icon" href="safari-pinned-tab.svg" color="#3385FF">
 
         <link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/screen.css">
+        <link rel="stylesheet" href="css/screen.css">
+        
+        <script src="script/app.js"> </script>
     </head>
     <body>
         <section class="o-row o-row--lg o-row--login o-row--beta">
@@ -40,17 +42,37 @@
 							<h5>
 								Password Toggle
 							</h5>
-							<p class="c-form-field">
-								<label class="c-label" for="password">
-									Password
-								</label>
-								<span class="c-password-toggle-container">
-									<input class="c-input c-input--password-with-toggle js-password-input" type="password" name="password" id="password"
-									 required>
-									<!-- Password toggle -->
-									<!-- TODO: add password toggle -->
-								</span>
-							</p>
+                            <p class="c-form-field">
+                                <label class="c-label" for="password">
+                                    Password
+                                </label>
+                                <span class="c-password-toggle-container">
+                                    <input class="c-input c-input--password-with-toggle js-password-input" type="password"
+                                       name="password" id="password" required>
+     
+     
+                                    <!-- Password toggle -->
+                                    <!-- TODO: add password toggle -->
+                                    <input class="o-hide-accessible c-input-option c-custom-input-option-hidden js-password-toggle"
+                                       type="checkbox" id="pwdcheckbox">
+                                    <label class="c-label c-password-input-label " for="pwdcheckbox">
+                                        <svg class="c-password-icon c-password-icon--show" xmlns="http://www.w3.org/2000/svg"
+                                           viewBox="0 0 20 20">
+                                            <path d="M6.4,133.876a11,11,0,0,1,19.571-.061l.029.061a11,11,0,0,1-19.571.061l-.029-.061Zm9.8,4a4,4,0,1,0,0-8h0a4,4,0,0,0,0,8Zm0-2a2,2,0,0,1,0-4h0a2,2,0,1,1,0,4Z"
+                                               transform="translate(-6.2 -123.876)" />
+                                        </svg>
+                                        <svg class="c-password-icon c-password-icon--hide" xmlns="http://www.w3.org/2000/svg"
+                                           viewBox="0 0 20 20">
+                                            <path d="M19.009,73.18l-1.77,1.78a3.908,3.908,0,0,0-1.037-.137,4,4,0,0,0-3.857,5.065l-.007-.028-2.76,2.75A11.106,11.106,0,0,1,6.4,78.82,11.014,11.014,0,0,1,19.076,73.2L19,73.18Zm3.8,1.85a11.163,11.163,0,0,1,3.2,3.79,11.014,11.014,0,0,1-12.7,5.622l.077.018,1.77-1.78a3.907,3.907,0,0,0,1.037.137,4,4,0,0,0,3.857-5.065l.007.028,2.76-2.75Zm-.25-3.99,1.42,1.42L9.839,86.6l-1.42-1.42Z"
+                                               transform="translate(-6.199 -68.82)" />
+                                        </svg>
+     
+     
+     
+                                    </label>
+     
+                                </span>
+                            </p>
                             <!-- Custom range slider -->
                             <h5>
                                 Range Slider
@@ -68,7 +90,33 @@
 								Dropdown
 							</h5>
 							<!-- TODO: add Markup for the buttons -->
+                            <p class="c-form-field">
+                                <div class="c-dropdown-container">
+                                    <div class="c-dropdown__buttons">
+                                        <button class="c-button__hoofd">
+                                            Move to
+                                            <span>
+                                                <!-- svg -->
+                                            </span>
+                                        </button>
+                                        <div>
+                                            <button>
+                                                    Review
+                                                    <span>
+                                                        <!-- svg -->
+                                                    </span>
+                                            </button>
+                                            <button>
+                                                    Todo
+                                                    <span>
+                                                        <!-- svg -->
+                                                    </span>
+                                            </button>
+                                        </div>
 
+                                    </div>
+                                </div>
+                            </p>
                             <!-- Like -->
                             <h5>
                                 Like this excercise!
