@@ -652,47 +652,6 @@ Input password with toggle checkbox on top of it needs
 more padding on the right to avoid overlap
 */
 
-.c-input--password-with-toggle {
-    padding-right: 52px;
-}
-
-.c-toggle__input--password{
-    display: block;
-    position: relative;
-}
-
-.c-toggle--hide{
-    visibility:hidden;
-}
-
-.c-toggle__password:checked + .c-toggle__input--password .c-toggle--show{
-    height: 50px;
-    visibility:hidden;
-}
-
-.c-toggle__password:checked + .c-toggle__input--password .c-toggle--hide{
-    visibility: visible;
-}
-
-.-toggle-password{
-    display: block;
-    position: relative;
-}
-
-.c-toggle__password{
-    position: relative;
-    left: 295px;
-    top: -50px;
-}
-.c-toggle__symbol{
-    height: 25px;
-    width: 25px;
-    position: absolute;
-    left: 290px;
-    top: -60px;
-    fill: var(--color-neutral-light);
-    pointer-events: none;
-}
 /* option input for checkboxes and radio buttons */
 
 .c-input-option {
@@ -748,8 +707,47 @@ more padding on the right to avoid overlap
 }
 
 .c-button__hoofd{
-    
+    cursor: pointer;  
+    width: 40%;
+    margin-bottom: 6px;
+    position: relative;
 }
+
+.c-button__dropdown{
+
+}
+
+.c-dropdown__content{
+    position: relative;
+    width: 40%;
+    position: absolute;
+}
+
+.c-dropdown__content--button{
+    display: block;
+    position: relative;
+}
+
+.c-dropdown--container__symbol{
+    position: absolute;
+    right: 12px;
+    top: 15px;
+}
+
+.c-dropdown__symbol{
+    width: 16px;
+    height: 16px;
+    fill: var(--color-neutral-light);
+}
+
+.show{
+    visibility: visible;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
 /*
     Component: range slider
     ---
@@ -1100,6 +1098,64 @@ Password toggle custom checkbox
 	---
 	Custom like button
 */
+.c-like__label{
+    height: 15px;
+}
+
+.c-like-icon {
+    top: 12px;
+    right: 12px;
+    height: 24px;
+
+}
+.c-like__input + .c-like__label .c-like-icon{
+    fill : var(--color-neutral-light);
+        
+}
+
+.c-like__input + .c-like__label .c-like-icon .c-like-icon{
+-webkit-animation: mymoveout 4s ; /* Chrome, Safari, Opera */
+    animation: mymoveout 4s ;
+}
+
+.c-like__input:checked + .c-like__label .c-like-icon{
+    fill : #D80027;
+
+}
+.c-like__input:checked + .c-like__label .c-like-icon{
+        -webkit-animation: mymovein 4s ; /* Chrome, Safari, Opera */
+animation: mymovein 4s ;
+
+}
+
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymovein {
+/*50% {-webkit-transform: scale(1, 0.5);}*/
+from {width: 24px; height : 24px}
+    to {width: 18px; height : 18px;}
+}
+
+/* Standard syntax */
+@keyframes mymovein {
+/*50% {transform: scale(1, 0.5);}*/
+from {width: 24px; height : 24px}
+    to {width: 18px; height : 18px;}
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes mymoveout {
+    /*50% {-webkit-transform: scale(0.5, 1);}*/
+    from {width: 18px; height : 18px}
+    to {width: 24px; height : 24px;}
+    }
+    
+/* Standard syntax */
+@keyframes mymoveout {
+/*50% {transform: scale(0.5, 1);}*/
+    from {width: 18px; height : 18px}
+    to {width: 24px; height : 24px;}
+}
 
 
 /*------------------------------------*\

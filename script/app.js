@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', function(){
     handleFloatingLabel();
     handlePasswordSwitcher();
     handleQualityRange();
+    handleDropdownButton();
+    //handleLikeButton();
 });
 
 function handleFloatingLabel(){
@@ -24,7 +26,7 @@ function handleFloatingLabel(){
         }
 
         
-    })
+    });
     
     
    
@@ -45,7 +47,7 @@ function handlePasswordSwitcher(){
             //console.log("is niet gecheckd");
             jsTextInput.setAttribute("type", "password");
         }
-        })
+        });
         
 }
 
@@ -63,6 +65,62 @@ function handleQualityRange(){
         jsInputHolder.setAttribute("data-value", jsValue);
         console.log("translateX(" + jsValue + "px)");
         jsInputHolder.style.transform = "translateX("+jsValue+"px)";
-    })
+    });
     
+}
+
+function handleDropdownButton(){
+    let jsInputDropdown = document.querySelector(".c-button__hoofd"),
+        jsInputDropdownContent = document.querySelector(".c-dropdown__content"),
+        jsbuttens = document.querySelector(".jsbutten"),
+        modal = document.querySelector(".c-dropdown__buttons");
+    let Isclicked = false;
+
+    jsInputDropdownContent.addEventListener("click",function(e){
+        e.preventDefault();
+    })
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            jsInputDropdownContent.classList.add("hidden");
+            jsInputDropdownContent.classList.remove("show");
+            Isclicked = false;
+        }
+
+    }
+
+    console.log(jsbuttens);
+
+    jsbuttens.addEventListener("click", function(e){
+        e.preventDefault();
+        if(Isclicked== true){
+            console.log("geklikd 2");
+            jsInputDropdownContent.classList.add("hidden");
+            jsInputDropdownContent.classList.remove("show");
+            Isclicked = false;
+        }
+        else{
+            console.log("geklikd 1");
+            jsInputDropdownContent.classList.add("show");
+            jsInputDropdownContent.classList.remove("hidden");
+            Isclicked = true;
+        }
+    });
+}
+
+function handleLikeButton(){
+    let IsLike = false;
+    let jsInputLike = document.querySelector(".c-like-icon"),
+        colorSvg = document.querySelector(".jsColor");
+
+    jsInputLike.addEventListener("click", function (e){
+        if (IsLike){
+            colorSvg.classList.remove("c-like--color__gray");
+            IsLike= false;
+        }
+        else{
+            colorSvg.classList.add("c-like--color__gray");
+            IsLike = true;
+        }
+    })
 }
